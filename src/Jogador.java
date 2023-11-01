@@ -1,5 +1,5 @@
 public class Jogador {
     String nome;
     int camnum;
-    int stamina;
+    int stamina = 50;
 }

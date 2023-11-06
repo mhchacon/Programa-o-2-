@@ -170,52 +170,58 @@ public class App {
             int escolhaCap3 = capitulo3.escolher();
     
             if (escolhaCap3 == 1) {
-                System.out.println(" Você parte para cima do marcador com habilidade, fazendo alguns dribles desconcertantes. Chegando próximo à área, você percebe que tem um bom ângulo para o chute.");
+                capitulo escolha1 = new capitulo("escolha 1","Você parte para cima do marcador com habilidade, fazendo alguns dribles desconcertantes. Chegando próximo à área, você percebe que tem um bom ângulo para o chute. Você parte para cima do marcador com habilidade, fazendo alguns dribles desconcertantes. Chegando próximo à área, você percebe que tem um bom ângulo para o chute.",
+                 "Digite 1 - Chutar forte em direção ao gol.","Digite 2 - Tentar uma finalização mais precisa, mirando no canto do gol.", null,jogador1, 15, scanner);
                 
-                System.out.println("Digite 1 - Chutar forte em direção ao gol.");
-                System.out.println("Digite 2 - Tentar uma finalização mais precisa, mirando no canto do gol.");
-
-                int op4 = scanner.nextInt();
+                escolha1.mostrar();
+                int op4 = escolha1.escolher();
+                jogador1.stamina += capitulo3.alteracaoStamina;
+            
 
                 if (op4 == 1) {
-                    System.out.println("\nVocê chuta forte em direção ao gol, a bola desvia no zagueiro e sai para escanteio.");
-            
-                   
-                    System.out.println(" O time ganha um escanteio, mas não consegue converter em gol. A partida continua empatada e você segue determinado a fazer a diferença.");
+                    
+                    capitulo escolha11 = new capitulo(null, 
+                    "\nVocê chuta forte em direção ao gol, a bola desvia no zagueiro e sai para escanteio.O time ganha um escanteio, mas não consegue converter em gol. A partida continua empatada e você segue determinado a fazer a diferença." , 
+                    null, null, null, jogador1, op4, scanner);
+                    escolha11.mostrar();
+                    jogador1.stamina += capitulo3.alteracaoStamina;
+
                 } else if (op4 == 2) {
-                    System.out.println("\nVocê mira com precisão e chuta colocado no canto do gol. A bola passa raspando na trave e entra!");
-            
-                 
-                    System.out.println(" Você marca um gol decisivo, colocando seu time à frente no placar. A torcida vai à loucura e você se sente como um verdadeiro herói.");
-            
+                    capitulo escolha12 = new capitulo(null, 
+                    "\\n Você mira com precisão e chuta colocado no canto do gol. A bola passa raspando na trave e entra!, Você marca um gol decisivo, colocando seu time à frente no placar. A torcida vai à loucura e você se sente como um verdadeiro herói." , 
+                    null, null, null, jogador1, op4, scanner);
+                    escolha12.mostrar();
                 jogador1.stamina += capitulo3.alteracaoStamina;
 
             } else if(escolhaCap3 == 2) {
-                System.out.println(" Você opta por fazer um passe longo para o atacante. A jogada é rápida e o atacante fica cara a cara com o goleiro adversário.");
-                System.out.println("Digite 1 - Ficar atento para possíveis rebotes.");
-                System.out.println("Digite 2 - Começar a se posicionar para a próxima jogada.");
+                capitulo escolha2 = new capitulo("escolha 2", 
+                "Você opta por fazer um passe longo para o atacante. A jogada é rápida e o atacante fica cara a cara com o goleiro adversário.", 
+                "Digite 1 - Ficar atento para possíveis rebotes.", "Digite 2 - Começar a se posicionar para a próxima jogada.", null, jogador1, op4, scanner);
+                
+                escolha2.mostrar();
             
                 int op5 = scanner.nextInt();
             
                 if (op5 == 1) {
-                    System.out.println("\nO goleiro rebate o chute e a bola sobra próxima a você. Você tenta finalizar, mas o zagueiro consegue afastar.");
-            
-                    
-                    System.out.println(" Você teve uma ótima oportunidade, mas não conseguiu marcar o gol. O jogo continua empatado e você está focado em continuar lutando.");
+                    capitulo escolha21 = new capitulo(null, "\nO goleiro rebate o chute e a bola sobra próxima a você. Você tenta finalizar, mas o zagueiro consegue afastar." + 
+                    "Você teve uma ótima oportunidade, mas não conseguiu marcar o gol. O jogo continua empatado e você está focado em continuar lutando.",
+                     null, null, null, jogador2, op5, scanner);
+                   
+                    escolha21.mostrar();
             
                 } else if (op5 == 2) {
-                    
-                    System.out.println("\nVocê se posiciona adequadamente para a próxima jogada, caso haja um rebote. O goleiro, no entanto, segura firme a bola.");
-            
-                    
-                    System.out.println(" O jogo continua equilibrado e você está pronto para continuar lutando até o fim.");
+                    capitulo escolha22 = new capitulo(null, "\nVocê se posiciona adequadamente para a próxima jogada, caso haja um rebote. O goleiro, no entanto, segura firme a bola." + 
+                    " O jogo continua equilibrado e você está pronto para continuar lutando até o fim.",
+                     null, null, null, jogador2, op5, scanner);
+                    escolha22.mostrar();
             
                 }
                 jogador1.stamina += capitulo3.alteracaoStamina;
 
             }else if (escolhaCap3 == 3){
-                System.out.println("Você decide retornar a bola para o meio-campo, optando por uma jogada mais segura.");
-                System.out.println("A posse de bola é mantida e o time consegue reorganizar a jogada. Você mostra maturidade ao escolher a opção mais segura.");
+                capitulo escolha3 = new capitulo("escolha 3", "Você decide retornar a bola para o meio-campo, optando por uma jogada mais segura." + 
+                "A posse de bola é mantida e o time consegue reorganizar a jogada. Você mostra maturidade ao escolher a opção mais segura.", null, null, null, jogador2, op4, scanner);
+                escolha3.mostrar();
                 jogador1.stamina += capitulo3.alteracaoStamina;
             }
 

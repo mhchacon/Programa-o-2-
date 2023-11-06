@@ -28,6 +28,11 @@ public class capitulo {
         System.out.println("Escolha 2: " + escolha2);
         System.out.println("Escolha 3:" + escolha3);
     }
+    
+    public void mostraFinal(String escolha1, String escolha2){
+        System.out.println("Escolha 1: " + escolha1);
+        System.out.println("Escolha 2: " + escolha2);
+    }
     public int escolher() {
         int escolha = 0;
         while (escolha != 1 && escolha != 2 && escolha != 3) {

@@ -180,14 +180,14 @@ public class App {
 
                 if (op4 == 1) {
                     
-                    capitulo escolha11 = new capitulo(null, 
+                    capitulo escolha11 = new capitulo("Final 1", 
                     "\nVocê chuta forte em direção ao gol, a bola desvia no zagueiro e sai para escanteio.O time ganha um escanteio, mas não consegue converter em gol. A partida continua empatada e você segue determinado a fazer a diferença." , 
                     null, null, null, jogador1, op4, scanner);
                     escolha11.mostrar();
                     jogador1.stamina += capitulo3.alteracaoStamina;
 
                 } else if (op4 == 2) {
-                    capitulo escolha12 = new capitulo(null, 
+                    capitulo escolha12 = new capitulo("final 2", 
                     "\\n Você mira com precisão e chuta colocado no canto do gol. A bola passa raspando na trave e entra!, Você marca um gol decisivo, colocando seu time à frente no placar. A torcida vai à loucura e você se sente como um verdadeiro herói." , 
                     null, null, null, jogador1, op4, scanner);
                     escolha12.mostrar();
@@ -203,16 +203,16 @@ public class App {
                 int op5 = scanner.nextInt();
             
                 if (op5 == 1) {
-                    capitulo escolha21 = new capitulo(null, "\nO goleiro rebate o chute e a bola sobra próxima a você. Você tenta finalizar, mas o zagueiro consegue afastar." + 
+                    capitulo escolha21 = new capitulo("Final 3", "\nO goleiro rebate o chute e a bola sobra próxima a você. Você tenta finalizar, mas o zagueiro consegue afastar." + 
                     "Você teve uma ótima oportunidade, mas não conseguiu marcar o gol. O jogo continua empatado e você está focado em continuar lutando.",
-                     null, null, null, jogador2, op5, scanner);
+                     null, null, null, jogador1, op5, scanner);
                    
                     escolha21.mostrar();
             
                 } else if (op5 == 2) {
-                    capitulo escolha22 = new capitulo(null, "\nVocê se posiciona adequadamente para a próxima jogada, caso haja um rebote. O goleiro, no entanto, segura firme a bola." + 
+                    capitulo escolha22 = new capitulo("Final 4", "\nVocê se posiciona adequadamente para a próxima jogada, caso haja um rebote. O goleiro, no entanto, segura firme a bola." + 
                     " O jogo continua equilibrado e você está pronto para continuar lutando até o fim.",
-                     null, null, null, jogador2, op5, scanner);
+                     null, null, null, jogador1, op5, scanner);
                     escolha22.mostrar();
             
                 }
@@ -222,7 +222,8 @@ public class App {
                 capitulo escolha3 = new capitulo("escolha 3", "Você decide retornar a bola para o meio-campo, optando por uma jogada mais segura." + 
                 "A posse de bola é mantida e o time consegue reorganizar a jogada. Você mostra maturidade ao escolher a opção mais segura.", null, null, null, jogador2, op4, scanner);
                 escolha3.mostrar();
-                jogador1.stamina += capitulo3.alteracaoStamina;
+                
+
             }
 
             System.out.println("------fim do terceiro capitulo------");

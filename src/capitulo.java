@@ -21,18 +21,21 @@ public class capitulo {
         this.alteracaoStamina = alteracaoStamina;
         this.escaneador = escaneador;
     }
+    
     public void mostrar() {
         System.out.println("\n----- " + nome + " -----");
         System.out.println(texto);
-        System.out.println("Escolha 1: " + escolha1);
-        System.out.println("Escolha 2: " + escolha2);
-        System.out.println("Escolha 3:" + escolha3);
+        if (escolha1 != null) {
+            System.out.println("Escolha 1: " + escolha1);
+        }
+        if (escolha2 != null) {
+            System.out.println("Escolha 2: " + escolha2);
+        }
+        if (escolha3 != null) {
+            System.out.println("Escolha 3: " + escolha3);
+        }
     }
     
-    public void mostraFinal(String escolha1, String escolha2){
-        System.out.println("Escolha 1: " + escolha1);
-        System.out.println("Escolha 2: " + escolha2);
-    }
     public int escolher() {
         int escolha = 0;
         while (escolha != 1 && escolha != 2 && escolha != 3) {

@@ -6,13 +6,16 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("É sua estreia no profissional do ");
-        String time = scanner.next();
+        
+        Jogador jogador1 = new Jogador();
+        
+        jogador1.time = scanner.next();
 
-        System.out.println("\nÉ sua estreia no profissional do " + time + " com a camisa");
+        System.out.println("\nÉ sua estreia no profissional do " + jogador1.time + " com a camisa");
 
-        int num = scanner.nextInt();
+        jogador1.camnum = scanner.nextInt();
 
-        System.out.println("\nÉ sua estreia no profissional do " + time + " com a camisa " + num + " no minuto 43 do segundo tempo, o jogo está empatado em 2x2.");
+        System.out.println("\nÉ sua estreia no profissional do " + jogador1.time + " com a camisa " + jogador1.camnum + " no minuto 43 do segundo tempo, o jogo está empatado em 2x2.");
         System.out.println("No minuto 43 seu companheiro Carlos faz um passe enfiado te deixando na entrada da grande área. Prontamente o zagueiro do time adversário se aproxima, o que você deve fazer?\n");
         System.out.println("Digite 1 - Tentar driblar o zagueiro aplicando um elástico e em seguida correr para dentro da área.");
         System.out.println("Digite 2 - Dar um toque na bola para a direita tirando do zagueiro e chutar colocado fora de área.");
@@ -61,14 +64,11 @@ public class App {
 
         System.out.println("------fim do primeiro capitulo------");
         
-        Scanner scanner3 = new Scanner(System.in);
-
-        Jogador jogador1 = new Jogador();
 
         System.out.println("para esse capitulo, digite o nome do seu jogador: ");
         jogador1.nome = scanner.next();
 
-        System.out.println("é seu segundo jogo pelo " + time +" " + jogador1.nome + "!!, ");
+        System.out.println("é seu segundo jogo pelo " + jogador1.time +" " + jogador1.nome + "!!, ");
         
         
 
@@ -77,14 +77,14 @@ public class App {
         System.out.println("Digite 1 - Tocar a bola com calma, mantendo a posse e evitando corridas.");
         System.out.println("Digite 2 - Tentar fazer uma corrida veloz para superar a marcação.");
         
-        int op2 = scanner3.nextInt();
+        int op2 = scanner.nextInt();
 
         if (op2 == 1) {
             System.out.println("\nVocê segue a orientação do técnico, tocando a bola com calma e mantendo a posse.");
-            jogador1.stamina -= 10; // Reduz a stamina ao tocar a bola
+            jogador1.stamina -= 10; 
         } else if (op2 == 2) {
             System.out.println("\nVocê decide fazer uma corrida veloz para tentar superar a marcação.");
-            jogador1.stamina -= 30; // Reduz mais stamina ao fazer uma corrida
+            jogador1.stamina -= 30; 
         } else {
             System.out.println("Opção inválida. Escolha entre a opção 1 ou 2.");
         }
@@ -93,19 +93,19 @@ public class App {
         System.out.println("Digite 1 - Tentar um drible desconcertante para surpreender a defesa.");
         System.out.println("Digite 2 - Fazer um passe seguro para manter a posse de bola.");
 
-        int op3 = scanner3.nextInt();
+        int op3 = scanner.nextInt();
 
         if (op3 == 1) {
             System.out.println("\nVocê tenta um drible desconcertante, mas a defesa adversária se mantém firme e consegue desarmá-lo.");
-            jogador1.stamina -= 20; // Reduz a stamina ao tentar um drible
+            jogador1.stamina -= 20; 
         } else if (op3 == 2) {
             System.out.println("\nVocê faz um passe seguro para manter a posse de bola e controlar o jogo.");
-            jogador1.stamina -= 5; // Reduz um pouco a stamina ao fazer um passe seguro
+            jogador1.stamina -= 5; 
         } else {
             System.out.println("Opção inválida. Escolha entre a opção 1 ou 2.");
         }
 
-        // Verifica a stamina novamente
+        
 
         if (jogador1.stamina <= 0) {
             System.out.println("\nSua stamina acabou. Você se sente exausto e tem dificuldades para continuar.");
@@ -116,7 +116,9 @@ public class App {
         
 
         Jogador jogador2 = new Jogador();
+        
         jogador2.nome = "David"; 
+        
         jogador2.camnum = 10; 
 
         System.out.println("Você está jogando ao lado de " + jogador2.nome + " com a camisa número " + jogador2.camnum + ".\n");
@@ -130,7 +132,7 @@ public class App {
             System.out.println("Digite 1 - Chutar para o gol");
             System.out.println("Digite 2 - Passar a bola para um companheiro.");
             
-            int op4 = scanner3.nextInt();
+            int op4 = scanner.nextInt();
 
             if (op4 == 1) {
                 System.out.println("\nVocê chuta para o gol!");
@@ -155,9 +157,79 @@ public class App {
             System.out.println("\"Você deveria ter poupado mais energia. Sua falta de disciplina custou ao time!\"");
         }
         System.out.println("------fim do segundo capitulo------");
-        scanner3.close();   
+       
+        
+    
+        capitulo capitulo3 = new capitulo("Capítulo 3", "Após dois jogos, você está se preparando para o terceiro jogo pelo " + jogador1.time + 
+        ". Você sente a pressão da torcida e a expectativa da equipe pois é seu primeiro classico contra seu pricipal rival. O jogo começa e você está determinado a fazer a diferença. No primeiro tempo, o adversário está pressionando, mas a defesa está aguentando firme. No segundo tempo, em uma jogada rápida, a bola chega até você no meio-campo. Você vê uma oportunidade de lançar um contra-ataque e se destacar." 
+        , "Digite 1 - Tentar driblar o marcador e avançar com a bola.", "Digite 2 - Fazer um passe longo para o atacante e avançar junto com o time.","Digite 3 - Retornar a bola para o meio-campo e recomeçar a jogada.", 
+        jogador1, 10, scanner);
+        
+    
+            capitulo3.mostrar();
+            int escolhaCap3 = capitulo3.escolher();
+    
+            if (escolhaCap3 == 1) {
+                System.out.println(" Você parte para cima do marcador com habilidade, fazendo alguns dribles desconcertantes. Chegando próximo à área, você percebe que tem um bom ângulo para o chute.");
+                
+                System.out.println("Digite 1 - Chutar forte em direção ao gol.");
+                System.out.println("Digite 2 - Tentar uma finalização mais precisa, mirando no canto do gol.");
+
+                int op4 = scanner.nextInt();
+
+                if (op4 == 1) {
+                    System.out.println("\nVocê chuta forte em direção ao gol, a bola desvia no zagueiro e sai para escanteio.");
+            
+                   
+                    System.out.println(" O time ganha um escanteio, mas não consegue converter em gol. A partida continua empatada e você segue determinado a fazer a diferença.");
+                } else if (op4 == 2) {
+                    System.out.println("\nVocê mira com precisão e chuta colocado no canto do gol. A bola passa raspando na trave e entra!");
+            
+                 
+                    System.out.println(" Você marca um gol decisivo, colocando seu time à frente no placar. A torcida vai à loucura e você se sente como um verdadeiro herói.");
+            
+                jogador1.stamina += capitulo3.alteracaoStamina;
+
+            } else if(escolhaCap3 == 2) {
+                System.out.println(" Você opta por fazer um passe longo para o atacante. A jogada é rápida e o atacante fica cara a cara com o goleiro adversário.");
+                System.out.println("Digite 1 - Ficar atento para possíveis rebotes.");
+                System.out.println("Digite 2 - Começar a se posicionar para a próxima jogada.");
+            
+                int op5 = scanner.nextInt();
+            
+                if (op5 == 1) {
+                    System.out.println("\nO goleiro rebate o chute e a bola sobra próxima a você. Você tenta finalizar, mas o zagueiro consegue afastar.");
+            
+                    
+                    System.out.println(" Você teve uma ótima oportunidade, mas não conseguiu marcar o gol. O jogo continua empatado e você está focado em continuar lutando.");
+            
+                } else if (op5 == 2) {
+                    
+                    System.out.println("\nVocê se posiciona adequadamente para a próxima jogada, caso haja um rebote. O goleiro, no entanto, segura firme a bola.");
+            
+                    
+                    System.out.println(" O jogo continua equilibrado e você está pronto para continuar lutando até o fim.");
+            
+                }
+                jogador1.stamina += capitulo3.alteracaoStamina;
+
+            }else if (escolhaCap3 == 3){
+                System.out.println("Você decide retornar a bola para o meio-campo, optando por uma jogada mais segura.");
+                System.out.println("A posse de bola é mantida e o time consegue reorganizar a jogada. Você mostra maturidade ao escolher a opção mais segura.");
+                jogador1.stamina += capitulo3.alteracaoStamina;
+            }
+
+            System.out.println("------fim do terceiro capitulo------");
+            scanner.close(); 
+        }
+        
     }
+}
+
+    
 
 
     
-}
+
+
+

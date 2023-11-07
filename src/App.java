@@ -158,85 +158,73 @@ public class App {
         }
         System.out.println("------fim do segundo capitulo------");
        
-        
-    
         capitulo capitulo3 = new capitulo("Capítulo 3", "Após dois jogos, você está se preparando para o terceiro jogo pelo " + jogador1.time + 
-        ". Você sente a pressão da torcida e a expectativa da equipe pois é seu primeiro classico contra seu pricipal rival. O jogo começa e você está determinado a fazer a diferença. No primeiro tempo, o adversário está pressionando, mas a defesa está aguentando firme. No segundo tempo, em uma jogada rápida, a bola chega até você no meio-campo. Você vê uma oportunidade de lançar um contra-ataque e se destacar." 
-        , "Digite 1 - Tentar driblar o marcador e avançar com a bola.", "Digite 2 - Fazer um passe longo para o atacante e avançar junto com o time.","Digite 3 - Retornar a bola para o meio-campo e recomeçar a jogada.", 
-        jogador1, 10, scanner);
-        
-    
-            capitulo3.mostrar();
-            int escolhaCap3 = capitulo3.escolher();
-    
-            if (escolhaCap3 == 1) {
-                capitulo escolha1 = new capitulo("escolha 1","Você parte para cima do marcador com habilidade, fazendo alguns dribles desconcertantes. Chegando próximo à área, você percebe que tem um bom ângulo para o chute. Você parte para cima do marcador com habilidade, fazendo alguns dribles desconcertantes. Chegando próximo à área, você percebe que tem um bom ângulo para o chute.",
-                 "Digite 1 - Chutar forte em direção ao gol.","Digite 2 - Tentar uma finalização mais precisa, mirando no canto do gol.", null,jogador1, 15, scanner);
-                
-                escolha1.mostrar();
-                int op4 = escolha1.escolher();
-                jogador1.stamina += capitulo3.alteracaoStamina;
-            
+            ". Você sente a pressão da torcida e a expectativa da equipe pois é seu primeiro clássico contra seu principal rival. O jogo começa e você está determinado a fazer a diferença. No primeiro tempo, o adversário está pressionando, mas a defesa está aguentando firme. No segundo tempo, em uma jogada rápida, a bola chega até você no meio-campo. Você vê uma oportunidade de lançar um contra-ataque e se destacar." 
+            , "Digite 1 - Tentar driblar o marcador e avançar com a bola.", "Digite 2 - Fazer um passe longo para o atacante e avançar junto com o time.","Digite 3 - Retornar a bola para o meio-campo e recomeçar a jogada.", 
+            jogador1, -10, scanner);
 
-                if (op4 == 1) {
-                    
-                    capitulo escolha11 = new capitulo("Final 1", 
-                    "\nVocê chuta forte em direção ao gol, a bola desvia no zagueiro e sai para escanteio.O time ganha um escanteio, mas não consegue converter em gol. A partida continua empatada e você segue determinado a fazer a diferença." , 
-                    null, null, null, jogador1, op4, scanner);
-                    escolha11.mostrar();
-                    jogador1.stamina += capitulo3.alteracaoStamina;
+    capitulo3.mostrar();
+    int escolhaCap3 = capitulo3.escolher();
 
-                } else if (op4 == 2) {
-                    capitulo escolha12 = new capitulo("final 2", 
-                    "\\n Você mira com precisão e chuta colocado no canto do gol. A bola passa raspando na trave e entra!, Você marca um gol decisivo, colocando seu time à frente no placar. A torcida vai à loucura e você se sente como um verdadeiro herói." , 
-                    null, null, null, jogador1, op4, scanner);
-                    escolha12.mostrar();
-                jogador1.stamina += capitulo3.alteracaoStamina;
+    if (escolhaCap3 == 1) {
+        capitulo escolha1 = new capitulo("escolha 1","Você parte para cima do marcador com habilidade, fazendo alguns dribles desconcertantes. Chegando próximo à área, você percebe que tem um bom ângulo para o chute. Você parte para cima do marcador com habilidade, fazendo alguns dribles desconcertantes. Chegando próximo à área, você percebe que tem um bom ângulo para o chute.",
+                "Digite 1 - Chutar forte em direção ao gol.","Digite 2 - Tentar uma finalização mais precisa, mirando no canto do gol.", null,jogador1, - 15, scanner);
 
-            } else if(escolhaCap3 == 2) {
-                capitulo escolha2 = new capitulo("escolha 2", 
-                "Você opta por fazer um passe longo para o atacante. A jogada é rápida e o atacante fica cara a cara com o goleiro adversário.", 
-                "Digite 1 - Ficar atento para possíveis rebotes.", "Digite 2 - Começar a se posicionar para a próxima jogada.", null, jogador1, op4, scanner);
-                
-                escolha2.mostrar();
-            
-                int op5 = scanner.nextInt();
-            
-                if (op5 == 1) {
-                    capitulo escolha21 = new capitulo("Final 3", "\nO goleiro rebate o chute e a bola sobra próxima a você. Você tenta finalizar, mas o zagueiro consegue afastar." + 
-                    "Você teve uma ótima oportunidade, mas não conseguiu marcar o gol. O jogo continua empatado e você está focado em continuar lutando.",
-                     null, null, null, jogador1, op5, scanner);
-                   
-                    escolha21.mostrar();
-            
-                } else if (op5 == 2) {
-                    capitulo escolha22 = new capitulo("Final 4", "\nVocê se posiciona adequadamente para a próxima jogada, caso haja um rebote. O goleiro, no entanto, segura firme a bola." + 
-                    " O jogo continua equilibrado e você está pronto para continuar lutando até o fim.",
-                     null, null, null, jogador1, op5, scanner);
-                    escolha22.mostrar();
-            
-                }
-                jogador1.stamina += capitulo3.alteracaoStamina;
+        escolha1.mostrar();
+        int op4 = escolha1.escolher();
+        jogador1.stamina += escolha1.alteracaoStamina;
 
-            }else if (escolhaCap3 == 3){
-                capitulo escolha3 = new capitulo("escolha 3", "Você decide retornar a bola para o meio-campo, optando por uma jogada mais segura." + 
-                "A posse de bola é mantida e o time consegue reorganizar a jogada. Você mostra maturidade ao escolher a opção mais segura.", null, null, null, jogador2, op4, scanner);
-                escolha3.mostrar();
-                
-
-            }
-
-            System.out.println("------fim do terceiro capitulo------");
-            scanner.close(); 
+        if (op4 == 1) {
+            capitulo escolha11 = new capitulo("Final 1", 
+                    "\nVocê chuta forte em direção ao gol, a bola desvia no zagueiro e sai para escanteio. O time ganha um escanteio, mas não consegue converter em gol. A partida continua empatada e você segue determinado a fazer a diferença." , 
+                    null, null, null, jogador1, -20, scanner);
+            escolha11.mostrar();
+            jogador1.stamina += escolha11.alteracaoStamina;
+        } else if (op4 == 2) {
+            capitulo escolha12 = new capitulo("final 2", 
+                    "\\n Você mira com precisão e chuta colocado no canto do gol. A bola passa raspando na trave e entra! Você marca um gol decisivo, colocando seu time à frente no placar. A torcida vai à loucura e você se sente como um verdadeiro herói." , 
+                    null, null, null, jogador1, -20, scanner);
+            escolha12.mostrar();
+            jogador1.stamina += escolha12.alteracaoStamina;
         }
-        
+    } else if(escolhaCap3 == 2) {
+        capitulo escolha2 = new capitulo("escolha 2", 
+                "Você opta por fazer um passe longo para o atacante. A jogada é rápida e o atacante fica cara a cara com o goleiro adversário.", 
+                "Digite 1 - Ficar atento para possíveis rebotes.", "Digite 2 - Começar a se posicionar para a próxima jogada.", null, jogador1, -15, scanner);
+
+        escolha2.mostrar();
+
+        int op5 = scanner.nextInt();
+
+        if (op5 == 1) {
+            capitulo escolha21 = new capitulo("Final 3", "\nO goleiro rebate o chute e a bola sobra próxima a você. Você tenta finalizar, mas o zagueiro consegue afastar." + 
+                    "Você teve uma ótima oportunidade, mas não conseguiu marcar o gol. O jogo continua empatado e você está focado em continuar lutando.",
+                    null, null, null, jogador1, -30, scanner);
+
+            escolha21.mostrar();
+        } else if (op5 == 2) {
+            capitulo escolha22 = new capitulo("Final 4", "\nVocê se posiciona adequadamente para a próxima jogada, caso haja um rebote. O goleiro, no entanto, segura firme a bola." + 
+                    " O jogo continua equilibrado e você está pronto para continuar lutando até o fim.",
+                    null, null, null, jogador1, -20, scanner);
+
+            escolha22.mostrar();
+        }
+
+        jogador1.stamina += escolha2.alteracaoStamina;
+
+    } else if (escolhaCap3 == 3){
+        capitulo escolha3 = new capitulo("escolha 3", "Você decide retornar a bola para o meio-campo, optando por uma jogada mais segura." + 
+                "A posse de bola é mantida e o time consegue reorganizar a jogada. Você mostra maturidade ao escolher a opção mais segura.", null, null, null, jogador1, -10, scanner);
+
+        escolha3.mostrar();
+        jogador1.stamina += escolha3.alteracaoStamina;
     }
+
+    System.out.println("------fim do terceiro capitulo------");
+}
 }
 
-    
-
 
     
-
-
+        
 

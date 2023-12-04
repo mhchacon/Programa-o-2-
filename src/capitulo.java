@@ -2,13 +2,54 @@ import java.util.Scanner;
 
 public class capitulo {
     
-    String nome;
-    String texto;
-    Escolha[] escolhas;
-    Jogador personagem;
-    Scanner scanner;
-    int alteracaoStamina;
+    private String nome;
+    private String texto;
+    private Escolha[] escolhas;
+    private Jogador personagem;
+    private Scanner scanner;
+    private int alteracaoStamina;
     
+    public String getNome(){
+        return nome;
+       }
+    
+    public void setTexto(String texto){
+        this.texto = texto;
+    }
+    
+    public Escolha[] getEscolhas() {
+        return escolhas;
+    }
+
+    public void setEscolhas(Escolha[] escolhas) {
+        this.escolhas = escolhas;
+    }
+
+    public Jogador getPersonagem(){
+        return personagem;
+    }
+
+    public void setPersonagem(Jogador personagem){
+        this.personagem = personagem;
+    }
+
+    public Scanner getScanner(){
+        return scanner;
+    }
+
+    
+    public int getAlteracaoStamina(){
+        return alteracaoStamina;
+    }
+    
+
+    public void setAlteracaoStamina(int alteracaoStamina){
+        this.alteracaoStamina = alteracaoStamina;
+    }
+
+
+
+
 
     public capitulo(String nome, String texto, Jogador personagem, int alteracaoStamina,Scanner scanner ) {
         this.nome = nome;
@@ -23,7 +64,7 @@ public class capitulo {
         System.out.println(texto);
         if (escolhas != null) {
             for (int i = 0; i < escolhas.length; i++) {
-                System.out.println("Digite " + i + " - " + escolhas[i].texto);
+                System.out.println("Digite " + i + " - " + escolhas[i].getTexto());
             }
         }
     }
@@ -47,8 +88,8 @@ public class capitulo {
         this.mostrar();
         if (escolhas != null) {
         int escolha = this.escolher();
-        this.escolhas[escolha].proximo.executar();
+        this.escolhas[escolha].getProximo().executar();
         }
-    }
-
+    
+}
 }

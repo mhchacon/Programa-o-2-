@@ -7,13 +7,13 @@ public class App {
 
         Jogador jogador1 = new Jogador();
         System.out.println("seu nome é: ");
-        jogador1.nome = scanner.next();
+        jogador1.setNome(scanner.next());
         System.out.print("É sua estreia no profissional do ");
-        jogador1.time = scanner.next();
+        jogador1.setTime(scanner.next());
         
         capitulo cap1 = new capitulo(
                 "Introdução",
-                jogador1.nome + " está se preparando para sua estreia pelo " + jogador1.time + 
+                jogador1.getNome() + " está se preparando para sua estreia pelo " + jogador1.getTime() + 
             ". Você sente a pressão da torcida e a expectativa da equipe, pois é seu primeiro clássico contra seu principal rival."+
              "O jogo começa e você está determinado a fazer a diferença. No primeiro tempo, o adversário está pressionando,"+
              " mas a defesa está aguentando firme. No segundo tempo, em uma jogada rápida, "+
@@ -48,10 +48,11 @@ public class App {
                 scanner
         );
 
-            
-        cap1.escolhas =  new Escolha[]{new Escolha("Você parte para cima do marcador com habilidade, fazendo alguns dribles desconcertantes. Chegando próximo à área, você percebe que tem um bom ângulo para o chute", esc1), 
-        new Escolha("\"Você opta por fazer um passe longo para o atacante. A jogada é rápida e o atacante fica cara a cara com o goleiro adversário. porem erra\"", esc2), 
-        new Escolha("Passar a bola para o companheiro, O companheiro tenta o chute, mas o goleiro adversário defende. O jogo termina em empate.", esc3)};
+        cap1.setEscolhas(new Escolha[]{
+                new Escolha("Você parte para cima do marcador com habilidade, fazendo alguns dribles desconcertantes. Chegando próximo à área, você percebe que tem um bom ângulo para o chute", esc1),
+                new Escolha("\"Você opta por fazer um passe longo para o atacante. A jogada é rápida e o atacante fica cara a cara com o goleiro adversário, porém erra\"", esc2),
+                new Escolha("Passar a bola para o companheiro. O companheiro tenta o chute, mas o goleiro adversário defende. O jogo termina em empate.", esc3)
+        });    
         
 
         cap1.executar();
